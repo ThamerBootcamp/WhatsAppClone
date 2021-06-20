@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thamer\\source\\repos\\WhatsAppApi\\WhatsAppApi\\WhatsAppApi.csproj": {}
+    "/home/z/tuwaiq/dotnet/mvc/WhatsAppClone/WhatsAppApi/WhatsAppApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thamer\\source\\repos\\WhatsAppApi\\WhatsAppApi\\WhatsAppApi.csproj": {
+    "/home/z/tuwaiq/dotnet/mvc/WhatsAppClone/WhatsAppApi/WhatsAppApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thamer\\source\\repos\\WhatsAppApi\\WhatsAppApi\\WhatsAppApi.csproj",
+        "projectUniqueName": "/home/z/tuwaiq/dotnet/mvc/WhatsAppClone/WhatsAppApi/WhatsAppApi.csproj",
         "projectName": "WhatsAppApi",
-        "projectPath": "C:\\Users\\Thamer\\source\\repos\\WhatsAppApi\\WhatsAppApi\\WhatsAppApi.csproj",
-        "packagesPath": "C:\\Users\\Thamer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thamer\\source\\repos\\WhatsAppApi\\WhatsAppApi\\obj\\",
+        "projectPath": "/home/z/tuwaiq/dotnet/mvc/WhatsAppClone/WhatsAppApi/WhatsAppApi.csproj",
+        "packagesPath": "/home/z/.nuget/packages/",
+        "outputPath": "/home/z/tuwaiq/dotnet/mvc/WhatsAppClone/WhatsAppApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thamer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/z/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.7, )"
@@ -83,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
         }
       }
     }
