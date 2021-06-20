@@ -13,13 +13,12 @@ namespace WhatsAppApi.Models
         public string Username { get; set; }
         public string Displayname { get; set; }
         public string Img { get; set; }
+        [JsonIgnore]
         public string Password { get; set; }
 
-        [JsonIgnore]
         // one to many : User ------<- Room
         [InverseProperty("Owner")]
         public List<RoomModel> OwnerRooms { get; set; }
-        [JsonIgnore]
         [InverseProperty("Guest")]
         public List<RoomModel> Guest_Rooms { get; set; }
     }

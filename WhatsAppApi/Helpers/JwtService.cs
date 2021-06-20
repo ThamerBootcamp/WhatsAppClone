@@ -33,7 +33,6 @@ namespace WhatsAppApi.Helpers
 
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuerSigningKey = true,
-
                 ValidateIssuer = false,
                 ValidateAudience = false
             }

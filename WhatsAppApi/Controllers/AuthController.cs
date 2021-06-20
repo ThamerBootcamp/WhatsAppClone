@@ -66,6 +66,8 @@ namespace WhatsAppApi.Controllers
 
             return Ok(new {
                 message ="Success",
+                id = user.Id,
+                token = jwt
             });
         }
 
@@ -78,14 +80,14 @@ namespace WhatsAppApi.Controllers
                 //{
 
                 //  var jwt = Request.Headers[HeaderNames.Authorization];//Request.Cookies["jwt"];
-                var jwt = Request.Headers["Authorization"].ToString().Replace("Bearer ", string.Empty);
+                    var jwt = Request.Headers["Authorization"].ToString().Replace("Bearer ", string.Empty);
 
                     var token = _jwtService.Verify(jwt);
 
                     var user_id = int.Parse(token.Issuer);
 
                     var user = await _repository.GetUserById(user_id);
-
+                
 
                     return Ok(user);
                 //}
