@@ -61,6 +61,7 @@ namespace WhatsAppApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WhatsAppApi", Version = "v1" });
             });
+            services.AddScoped<IRoomRepository, RoomRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IJwtService, JwtService>();
         }

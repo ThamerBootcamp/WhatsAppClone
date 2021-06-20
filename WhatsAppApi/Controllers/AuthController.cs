@@ -103,6 +103,7 @@ namespace WhatsAppApi.Controllers
         public IActionResult Logout()
         {
             Response.Cookies.Delete("jwt");
+            Response.Headers["Authorization"] = "";
             return Ok(new { message = "success" });
         }
     }

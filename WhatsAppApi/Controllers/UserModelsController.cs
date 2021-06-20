@@ -46,7 +46,7 @@ namespace WhatsAppApi.Controllers
                 var user_id = int.Parse(token.Issuer);
 
                 var userList = _context.Users
-                    .Where(u => u.Id == user_id)
+                    .Where(u => u.Id != user_id)
                     .Include(r => r.OwnerRooms)
                     .ThenInclude(u => u.Messages)
                     .Include(r => r.Guest_Rooms)
@@ -76,7 +76,12 @@ namespace WhatsAppApi.Controllers
 
                 var userList = _context.Users
                     .Where(u=> u.Id != user_id)
-                    .Where(u => u.Username.Contains(Username)).ToList();
+                    .Where(u => u.Username.Contains(Username))
+                    .Include(r => r.OwnerRooms)
+                    .ThenInclude(u => u.Messages)
+                    .Include(r => r.Guest_Rooms)
+                    .ThenInclude(m => m.Messages)
+                    .ToList();
 
                 return Ok(userList);
                 //}
