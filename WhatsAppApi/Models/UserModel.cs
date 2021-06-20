@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace WhatsAppApi.Models
@@ -14,10 +15,11 @@ namespace WhatsAppApi.Models
         public string Img { get; set; }
         public string Password { get; set; }
 
+        [JsonIgnore]
         // one to many : User ------<- Room
         [InverseProperty("Owner")]
         public List<RoomModel> OwnerRooms { get; set; }
-
+        [JsonIgnore]
         [InverseProperty("Guest")]
         public List<RoomModel> Guest_Rooms { get; set; }
     }

@@ -9,7 +9,7 @@ namespace WhatsAppApi.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 
@@ -17,6 +17,11 @@ namespace WhatsAppApi.Data
         public DbSet<RoomModel> Rooms { get; set; }
         public DbSet<MessageModel> Messages { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
+            modelBuilder.Entity<UserModel>().HasIndex(entity => new { entity.Username }).IsUnique();
+
+        }
     }
 }
