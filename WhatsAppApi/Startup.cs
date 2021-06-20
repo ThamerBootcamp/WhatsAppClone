@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using WhatsAppApi.Data;
+using WhatsAppApi.Hubs;
 using WhatsAppApi.Helpers;
 using WhatsAppApi.Repositories;
 
@@ -55,6 +56,7 @@ namespace WhatsAppApi
                 options.UseSqlServer(
         Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
+            services.AddSignalR();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WhatsAppApi", Version = "v1" });
@@ -99,6 +101,7 @@ namespace WhatsAppApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/ChatHub");
             });
         }
     }
